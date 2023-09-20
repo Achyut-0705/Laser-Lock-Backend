@@ -15,4 +15,6 @@ mongoose
     console.log("Error connecting to MongoDB: ", err);
   });
 
+mongoose.connection.on("connected", () => console.log("Connected to MongoDB"));
+
 module.exports = mongoose.connection;

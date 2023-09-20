@@ -3,6 +3,7 @@ const teamRoute = require("./routes/teamsRoute");
 const authRoute = require("./routes/authRoute");
 const path = require("path");
 const dotenv = require("dotenv");
+const db = require("./db/db");
 
 dotenv.config();
 
@@ -13,6 +14,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, async () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
